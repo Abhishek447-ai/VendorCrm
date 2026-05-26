@@ -71,7 +71,8 @@ const userData=
 await users.json()
 
 setUserCount(
-userData.length
+userData?.length || 1
+
 )
 
 }
