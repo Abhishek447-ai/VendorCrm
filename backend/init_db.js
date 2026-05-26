@@ -1,5 +1,5 @@
 const { load, save } = require('./db');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs')
 
 function init() {
   const data = load();
