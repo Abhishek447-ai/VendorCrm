@@ -31,7 +31,7 @@ message:'Invalid credentials'
 
 const valid =
 bcrypt.compareSync(
-password,
+password==
 user.password
 )
 
