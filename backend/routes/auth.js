@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 const { load } = require('../db')
@@ -30,10 +29,7 @@ message:'Invalid credentials'
 }
 
 const valid =
-bcrypt.compareSync(
-password==
-user.password
-)
+password === user.password
 
 if(!valid){
 
