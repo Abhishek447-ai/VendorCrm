@@ -1,6 +1,6 @@
-const API_BASE =
-  import.meta.env.VITE_API_BASE ||
-  'https://vendorcrm-edfa.onrender.com'
+
+ const API_BASE =
+"https://name-vendor-crm-backend.onrender.com/api"
 // if backend uses another port, change 5000
 
 
