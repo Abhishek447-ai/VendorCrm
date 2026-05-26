@@ -4,20 +4,20 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const db = require('../db')
+const { load } = require('../db')
 
 router.post('/login', async (req, res) => {
 
 try{
 
-const { username, password } = req.body
+const { email, password } = req.body
+
+const data = load()
 
 const user =
-db
-.prepare(
-'SELECT * FROM users WHERE username=?'
+data.users.find(
+u => u.email === email
 )
-.get(username)
 
 if(!user){
 
@@ -87,5 +87,4 @@ message:'Server error'
 
 })
 
-module.exports =
-router
+module.exports = router
